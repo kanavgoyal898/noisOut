@@ -2,3 +2,5 @@ jupyterlab
 matplotlib
 numpy
 torch
+torchvision
+torchaudio
