@@ -1,6 +1,6 @@
 # **noisOut: Denoising Diffusion Probabilistic Models**
 
-**noisOut** is a deep learning implementation based on Denoising Diffusion Probabilistic Models (DDPM) for generating high-quality images by training a model to reverse a diffusion process. This repository provides an implementation based on the work of **Dhariwal & Nichol (2021)** and **Ho et al. (2020)** to generate MNIST-like digits from noise through a diffusion-based generative process.
+**noisOut** is a deep learning implementation based on Denoising Diffusion Probabilistic Models (DDPM) for generating high-quality images by training a model to reverse a diffusion process. This repository provides an implementation based on the work of **Dhariwal & Nichol (2021)** and **Ho et al. (2020)** to generate flowers from noise through a diffusion-based generative process.
 
 <div>
   <img src="./demo.png" alt="noisOut" style="width: 100%;">
@@ -32,7 +32,7 @@ pip install -r requirements.txt
 ## **Usage**
 
 ### **1. Download the Dataset**:
-The MNIST dataset is automatically downloaded when the code is executed. It is used as the example dataset for training the model.
+The Flowers102 dataset is automatically downloaded when the code is executed. It is used as the example dataset for training the model.
 
 ### **2. Running the Notebook**:
 After cloning this repository, you can run the `test.ipynb` notebook, which demonstrates how the model is built, trained, and how it generates new images from noise. It includes the following steps:
@@ -48,11 +48,15 @@ To start, open the `test.ipynb` file in a Jupyter notebook environment and run t
 The trained model is saved after training and can be loaded using `torch.load`. The model is saved in the `./models` directory.
 
 ```python
-torch.save(model.state_dict(), './models/MNIST_model.pth')
+torch.save(model.state_dict(), './models/Flowers102_model.pth')
 ```
 
 ### **4. Inference**:
 Once the model is trained, you can generate new images by running the `sample_image()` function. This function demonstrates the reverse diffusion process to generate samples from noise.
+
+<div>
+  <img src="./results.png" alt="noisOut" style="width: 100%;">
+</div>
 
 ## **References**
 
@@ -63,7 +67,7 @@ In this paper, Ho et al. propose the Denoising Diffusion Probabilistic Model (DD
 
 ## **Conclusion**
 
-In this project, we implemented a Denoising Diffusion Probabilistic Model (DDPM) for generating images using the MNIST dataset. By leveraging a UNet architecture with Sinusoidal Position Embeddings, the model learns to reverse the forward diffusion process, effectively generating realistic images from noise.
+In this project, we implemented a Denoising Diffusion Probabilistic Model (DDPM) for generating images using the Oxford-102 dataset. By leveraging a UNet architecture with Sinusoidal Position Embeddings, the model learns to reverse the forward diffusion process, effectively generating realistic images from noise.
 
 The noisOut framework demonstrated the effectiveness of DDPMs in image synthesis, showing competitive performance with Generative Adversarial Networks (GANs). The notebook provides an easy-to-use implementation for training and inference. Future improvements could focus on optimizing training and exploring more complex datasets.
 
