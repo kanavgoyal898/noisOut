@@ -55,7 +55,7 @@ torch.save(model.state_dict(), './models/Flowers102_model.pth')
 Once the model is trained, you can generate new images by running the `sample_image()` function. This function demonstrates the reverse diffusion process to generate samples from noise.
 
 <div>
-  <img src="./results.png" alt="noisOut" style="width: 100%;">
+  <img src="./results/demo.png" alt="noisOut" style="width: 100%;">
 </div>
 
 ## **References**
